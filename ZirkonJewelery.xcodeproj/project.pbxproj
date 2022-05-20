@@ -25,7 +25,6 @@
 		796B174C2833B9F9006B0E86 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B174B2833B9F9006B0E86 /* Model.swift */; };
 		796B174F2833BDD6006B0E86 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B174E2833BDD6006B0E86 /* CategoriesRepository.swift */; };
 		796B17512833BE90006B0E86 /* AppUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B17502833BE90006B0E86 /* AppUrl.swift */; };
-		796B17552833C503006B0E86 /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B17542833C503006B0E86 /* CategoriesCell.swift */; };
 		796B17572833C593006B0E86 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B17562833C593006B0E86 /* Gradient.swift */; };
 		796B17592833C5E0006B0E86 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B17582833C5E0006B0E86 /* Header.swift */; };
 		796B175B2833C69A006B0E86 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B175A2833C69A006B0E86 /* String.swift */; };
@@ -48,6 +47,7 @@
 		79F28F722833A0F5000BF2A4 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F28F712833A0F5000BF2A4 /* FavoriteController.swift */; };
 		79F28F742833A105000BF2A4 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F28F732833A105000BF2A4 /* CategoryController.swift */; };
 		79F28F762833A13C000BF2A4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F28F752833A13C000BF2A4 /* TabBarController.swift */; };
+		79F8FBB028376930007DBAFC /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B175F2833C8FB006B0E86 /* CategoriesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +66,6 @@
 		796B174B2833B9F9006B0E86 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		796B174E2833BDD6006B0E86 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
 		796B17502833BE90006B0E86 /* AppUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUrl.swift; sourceTree = "<group>"; };
-		796B17542833C503006B0E86 /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesCell.swift; path = ../../../../../../../../Applications/CategoriesCell.swift; sourceTree = "<group>"; };
 		796B17562833C593006B0E86 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		796B17582833C5E0006B0E86 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		796B175A2833C69A006B0E86 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -157,7 +156,6 @@
 		796B175E2833C8FB006B0E86 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				796B175F2833C8FB006B0E86 /* CategoriesCell.swift */,
 				796B17582833C5E0006B0E86 /* Header.swift */,
 			);
 			path = Header;
@@ -262,7 +260,7 @@
 			children = (
 				796B175E2833C8FB006B0E86 /* Header */,
 				79F28F732833A105000BF2A4 /* CategoryController.swift */,
-				796B17542833C503006B0E86 /* CategoriesCell.swift */,
+				796B175F2833C8FB006B0E86 /* CategoriesCell.swift */,
 				796B175C2833C753006B0E86 /* ItemsCell.swift */,
 				796B17442833B9B1006B0E86 /* CategoryViewModel.swift */,
 			);
@@ -388,8 +386,8 @@
 				79F28F762833A13C000BF2A4 /* TabBarController.swift in Sources */,
 				796B17492833B9D6006B0E86 /* CartViewModel.swift in Sources */,
 				796B174C2833B9F9006B0E86 /* Model.swift in Sources */,
+				79F8FBB028376930007DBAFC /* CategoriesCell.swift in Sources */,
 				796B176A2833DF77006B0E86 /* FavoriteDataManager.swift in Sources */,
-				796B17552833C503006B0E86 /* CategoriesCell.swift in Sources */,
 				796B17592833C5E0006B0E86 /* Header.swift in Sources */,
 				796B17472833B9CA006B0E86 /* FavoriteViewModel.swift in Sources */,
 				796B175B2833C69A006B0E86 /* String.swift in Sources */,
