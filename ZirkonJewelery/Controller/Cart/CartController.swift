@@ -69,7 +69,7 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         }
         buttonBackground.addSubview(orderButton)
         orderButton.setTitle("Order now", for: .normal)
-        orderButton.addTarget(self, action: #selector(clear), for: .touchUpInside)
+        orderButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         orderButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.edges.equalToSuperview()
@@ -112,8 +112,37 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         let vc = InfoModule.create(jewelery: cartViewModel.getProduct(index: indexPath.item))
         navigationController?.pushViewController(vc, animated: true)
     }
-    @objc func clear() {
-        cartViewModel.clearCart()
+    @objc func showAlert() {
+        if cartViewModel.getProductCounts() == 0{
+            emptyAlert()
+        }else{
+            alertToCall()
+        }
+    }
+    func emptyAlert(){
+        let alert = UIAlertController(title: "Your cart is Empty", message: "Please order some of our products", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
+    }
+    func alertToCall(){
+        let alert = UIAlertController(title: "Thank ypu", message: "Our operators will contact you soon!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
+            self.cartViewModel.reloadCollectionView = { [unowned self] in
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+            }
+            self.cartViewModel.clearCart()
+            let vc = UINavigationController(rootViewController: TabBarController())
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: nil)
+        }))
+        alert.addTextField { textField in
+            textField.placeholder = "Phone number"
+            textField.text = "+998"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
     }
     
 }

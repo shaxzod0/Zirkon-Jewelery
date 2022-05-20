@@ -8,7 +8,7 @@
 import UIKit
 
 class CategoryViewModel {
-    var index: Int? {
+    var index: Int = 0 {
         didSet {
             self.reloadCollectionView?()
         }
@@ -32,11 +32,11 @@ class CategoryViewModel {
         return categoryName
     }
     func getItems(i: Int) -> Items {
-        let description = categories[index ?? 0].items[i].description
-        let id = categories[index ?? 0].items[i].id
-        let image = categories[index ?? 0].items[i].image
-        let name = categories[index ?? 0].items[i].name
-        let price = categories[index ?? 0].items[i].price
+        let description = categories[index].items[i].description
+        let id = categories[index].items[i].id
+        let image = categories[index].items[i].image
+        let name = categories[index].items[i].name
+        let price = categories[index].items[i].price
         let product = Items(description: description, id: id, image: image, name: name, price: price)
         return product
     }
@@ -44,7 +44,7 @@ class CategoryViewModel {
         return categories.count
     }
     func getCategoryItems() -> Items {
-        return items[index ?? 0]
+        return items[index]
     }
     
     func getItemsCount() -> Int {
