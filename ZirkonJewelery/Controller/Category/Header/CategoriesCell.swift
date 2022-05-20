@@ -6,9 +6,6 @@
 //
 
 import UIKit
-protocol getCategoryNameProtocol{
-    func getCategoryName(_ categoryName: Int)
-}
 
 class CategoriesCell: BaseCollectionCell<CategoriesModel> {
    
