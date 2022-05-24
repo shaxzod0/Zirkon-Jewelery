@@ -36,6 +36,9 @@
 		796B176E28341619006B0E86 /* CartDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B176D28341619006B0E86 /* CartDataManager.swift */; };
 		796B177028342190006B0E86 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B176F28342190006B0E86 /* FavoriteCell.swift */; };
 		796B177228342AC9006B0E86 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B177128342AC9006B0E86 /* CartCell.swift */; };
+		79EBC161283D3DDE00A506E3 /* OrderStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC160283D3DDE00A506E3 /* OrderStatusController.swift */; };
+		79EBC163283D3DFD00A506E3 /* OrderStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC162283D3DFD00A506E3 /* OrderStatusViewModel.swift */; };
+		79EBC167283D5B4E00A506E3 /* StatusDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC166283D5B4D00A506E3 /* StatusDataManager.swift */; };
 		79F1F67C2833A24300A630B5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 79F1F67B2833A24300A630B5 /* Alamofire */; };
 		79F1F67F2833A26300A630B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79F1F67E2833A26300A630B5 /* SnapKit */; };
 		79F28F5128339FDF000BF2A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F28F5028339FDF000BF2A4 /* AppDelegate.swift */; };
@@ -78,6 +81,9 @@
 		796B176D28341619006B0E86 /* CartDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDataManager.swift; sourceTree = "<group>"; };
 		796B176F28342190006B0E86 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		796B177128342AC9006B0E86 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		79EBC160283D3DDE00A506E3 /* OrderStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusController.swift; sourceTree = "<group>"; };
+		79EBC162283D3DFD00A506E3 /* OrderStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewModel.swift; sourceTree = "<group>"; };
+		79EBC166283D5B4D00A506E3 /* StatusDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDataManager.swift; sourceTree = "<group>"; };
 		79F28F4D28339FDF000BF2A4 /* ZirkonJewelery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZirkonJewelery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F28F5028339FDF000BF2A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F28F5228339FDF000BF2A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,9 +181,19 @@
 			isa = PBXGroup;
 			children = (
 				796B17692833DF77006B0E86 /* FavoriteDataManager.swift */,
+				79EBC166283D5B4D00A506E3 /* StatusDataManager.swift */,
 				796B176D28341619006B0E86 /* CartDataManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		79EBC15F283D3DB200A506E3 /* orderStatus */ = {
+			isa = PBXGroup;
+			children = (
+				79EBC160283D3DDE00A506E3 /* OrderStatusController.swift */,
+				79EBC162283D3DFD00A506E3 /* OrderStatusViewModel.swift */,
+			);
+			path = orderStatus;
 			sourceTree = "<group>";
 		};
 		79F28F4428339FDF000BF2A4 = {
@@ -237,6 +253,7 @@
 		79F28F692833A083000BF2A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				79EBC15F283D3DB200A506E3 /* orderStatus */,
 				7943B6812834CED200324D88 /* Introduction */,
 				796B17632833DDF8006B0E86 /* Information */,
 				79F28F6E2833A0CA000BF2A4 /* Cart */,
@@ -371,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79EBC161283D3DDE00A506E3 /* OrderStatusController.swift in Sources */,
 				79F28F722833A0F5000BF2A4 /* FavoriteController.swift in Sources */,
 				796B177228342AC9006B0E86 /* CartCell.swift in Sources */,
 				7943B68A2834EBE200324D88 /* UserDefaultsManager.swift in Sources */,
@@ -399,12 +417,14 @@
 				7943B6872834E26F00324D88 /* IntroCell.swift in Sources */,
 				796B177028342190006B0E86 /* FavoriteCell.swift in Sources */,
 				796B17452833B9B1006B0E86 /* CategoryViewModel.swift in Sources */,
+				79EBC163283D3DFD00A506E3 /* OrderStatusViewModel.swift in Sources */,
 				796B173F2833B3C1006B0E86 /* ReactButton.swift in Sources */,
 				79F28F742833A105000BF2A4 /* CategoryController.swift in Sources */,
 				796B173D2833AB8C006B0E86 /* AppColor.swift in Sources */,
 				796B175D2833C753006B0E86 /* ItemsCell.swift in Sources */,
 				7943B6832834CF3500324D88 /* IntroController.swift in Sources */,
 				796B176E28341619006B0E86 /* CartDataManager.swift in Sources */,
+				79EBC167283D5B4E00A506E3 /* StatusDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

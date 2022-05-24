@@ -125,6 +125,13 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         present(alert, animated: true)
     }
     func alertToCall(){
+        var name: String?
+        var phoneNumber: String?
+        let randomInt = Int.random(in: 0..<1000)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        let now = Date()
+        let date = formatter.string(from: now)
         let alert = UIAlertController(title: "Thank ypu", message: "Our operators will contact you soon!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
             self.cartViewModel.reloadCollectionView = { [unowned self] in
@@ -132,6 +139,11 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
                     self.collectionView?.reloadData()
                 }
             }
+            self.cartViewModel.saveOrderId()
+            UserDefaultsManager.shared.saveNumber(phone: name)
+            UserDefaultsManager.shared.saveName(name: phoneNumber)
+            UserDefaultsManager.shared.orderNumber(orderNumber: randomInt)
+            UserDefaultsManager.shared.saveDate(date: date)
             self.cartViewModel.clearCart()
             let vc = UINavigationController(rootViewController: TabBarController())
             vc.modalPresentationStyle = .fullScreen
@@ -140,6 +152,11 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         alert.addTextField { textField in
             textField.placeholder = "Phone number"
             textField.text = "+998"
+            phoneNumber = textField.text
+        }
+        alert.addTextField { textField in
+            textField.placeholder = "Name"
+            name = textField.text
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert, animated: true)

@@ -42,7 +42,6 @@ class CartViewModel {
         let price = productData[index].value(forKey: "price") as! String
         let id: Int = productData[index].value(forKey: "id") as! Int
         let product = Items(description: description , id: id, image: image, name: name, price: price)
-      
         return product
     }
 
@@ -74,6 +73,15 @@ class CartViewModel {
             switch res{
             case .success(let data):
                 self.productData = data
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    func saveOrderId() {
+        StatusDataManager.shared.orderStatus(orderId: 1) { res in
+            switch res{
+            case .success(_):break
             case .failure(let err):
                 print(err.localizedDescription)
             }

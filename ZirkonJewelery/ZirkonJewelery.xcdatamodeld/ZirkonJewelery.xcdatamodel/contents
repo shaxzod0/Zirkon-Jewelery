@@ -14,8 +14,12 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Status" representedClassName="Status" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
-        <element name="Fav" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="Cart" positionX="-54" positionY="27" width="128" height="104"/>
+        <element name="Fav" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Status" positionX="-54" positionY="45" width="128" height="44"/>
     </elements>
 </model>
