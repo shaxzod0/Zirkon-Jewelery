@@ -39,6 +39,7 @@
 		79EBC161283D3DDE00A506E3 /* OrderStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC160283D3DDE00A506E3 /* OrderStatusController.swift */; };
 		79EBC163283D3DFD00A506E3 /* OrderStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC162283D3DFD00A506E3 /* OrderStatusViewModel.swift */; };
 		79EBC167283D5B4E00A506E3 /* StatusDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC166283D5B4D00A506E3 /* StatusDataManager.swift */; };
+		79EBC169283E0F2F00A506E3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EBC168283E0F2F00A506E3 /* Array.swift */; };
 		79F1F67C2833A24300A630B5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 79F1F67B2833A24300A630B5 /* Alamofire */; };
 		79F1F67F2833A26300A630B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 79F1F67E2833A26300A630B5 /* SnapKit */; };
 		79F28F5128339FDF000BF2A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F28F5028339FDF000BF2A4 /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 		79EBC160283D3DDE00A506E3 /* OrderStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusController.swift; sourceTree = "<group>"; };
 		79EBC162283D3DFD00A506E3 /* OrderStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewModel.swift; sourceTree = "<group>"; };
 		79EBC166283D5B4D00A506E3 /* StatusDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDataManager.swift; sourceTree = "<group>"; };
+		79EBC168283E0F2F00A506E3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		79F28F4D28339FDF000BF2A4 /* ZirkonJewelery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZirkonJewelery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F28F5028339FDF000BF2A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F28F5228339FDF000BF2A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				796B173C2833AB8C006B0E86 /* AppColor.swift */,
+				79EBC168283E0F2F00A506E3 /* Array.swift */,
 				796B175A2833C69A006B0E86 /* String.swift */,
 				796B17562833C593006B0E86 /* Gradient.swift */,
 				796B173E2833B3C1006B0E86 /* ReactButton.swift */,
@@ -397,6 +400,7 @@
 				796B17652833DE0E006B0E86 /* ItemInformationController.swift in Sources */,
 				796B17672833DEAB006B0E86 /* InfoModule.swift in Sources */,
 				796B176C2833DFE4006B0E86 /* InfoViewModel.swift in Sources */,
+				79EBC169283E0F2F00A506E3 /* Array.swift in Sources */,
 				7943B6852834CF7900324D88 /* IntroViewModel.swift in Sources */,
 				796B17512833BE90006B0E86 /* AppUrl.swift in Sources */,
 				79F28F702833A0E4000BF2A4 /* CartController.swift in Sources */,

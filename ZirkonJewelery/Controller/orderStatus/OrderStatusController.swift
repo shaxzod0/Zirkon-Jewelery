@@ -64,16 +64,21 @@ extension OrderStatusController {
             make.height.equalTo(55)
         }
         let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
+        contentView.bounds = scrollView.frame
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(orderNumber.snp.bottom).offset(20)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(cancelOrderButton.snp.top).offset(-20)
         }
         let orderAcceptedView = UIView()
-        scrollView.addSubview(orderAcceptedView)
+        contentView.addSubview(orderAcceptedView)
         orderAcceptedView.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(2)
+            make.width.equalToSuperview()
             make.height.equalTo(90)
             make.top.left.equalToSuperview().offset(20)
         }
@@ -99,9 +104,9 @@ extension OrderStatusController {
             make.left.equalTo(acceptImage.snp.right).inset(-5)
         }
         let waitOperatorsView = UIView()
-        scrollView.addSubview(waitOperatorsView)
+        contentView.addSubview(waitOperatorsView)
         waitOperatorsView.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(2)
+            make.width.equalToSuperview()
             make.height.equalTo(90)
             make.top.equalTo(orderAcceptedView.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(20)
@@ -116,16 +121,17 @@ extension OrderStatusController {
         let waitDate = UILabel()
         waitOperatorsView.addSubview(waitDate)
         waitDate.numberOfLines = 0
-        waitDate.text = "Please wait\nour operators will contact you soon"
+        waitDate.text = "Please wait our operators will contact you soon"
         waitDate.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalTo(waitOperatorsImage.snp.right).inset(-5)
+            make.right.equalToSuperview().inset(20)
         }
         
         let onTheWayView = UIView()
-        scrollView.addSubview(onTheWayView)
+        contentView.addSubview(onTheWayView)
         onTheWayView.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(2)
+            make.width.equalToSuperview()
             make.height.equalTo(90)
             make.top.equalTo(waitOperatorsView.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(20)
@@ -154,9 +160,9 @@ extension OrderStatusController {
         }
         
         let recieveProductView = UIView()
-        scrollView.addSubview(recieveProductView)
+        contentView.addSubview(recieveProductView)
         recieveProductView.snp.makeConstraints { make in
-            make.width.equalToSuperview().dividedBy(2)
+            make.width.equalToSuperview()
             make.height.equalTo(90)
             make.top.equalTo(onTheWayView.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(20)
@@ -183,7 +189,7 @@ extension OrderStatusController {
             make.top.equalTo(recieveMessage.snp.bottom).offset(5)
             make.left.equalTo(recieveImage.snp.right).inset(-5)
         }
-        scrollView.addSubview(userInfoView)
+        contentView.addSubview(userInfoView)
         userInfoView.layer.cornerRadius = 15
         userInfoView.backgroundColor = .white
         userInfoView.axis = .vertical
@@ -226,7 +232,7 @@ extension OrderStatusController {
         present(alert, animated: true)
     }
     func refreshView() -> () {
-        self.viewDidLoad()
-        self.viewWillAppear(true)
+        view.subviews.forEach({ $0.removeFromSuperview() })
+        notOrderedView()
     }
 }

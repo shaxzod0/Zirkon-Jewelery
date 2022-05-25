@@ -32,6 +32,7 @@ extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionVi
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(ItemsCell.self, forCellWithReuseIdentifier: ItemsCell.reuseIdentifier)
         collectionView.register(Header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Header.identifier)
         collectionView.backgroundColor = .clear
@@ -54,7 +55,7 @@ extension CategoryController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 350)
+        return CGSize(width: collectionView.frame.width, height: 400)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width / 2 - 15

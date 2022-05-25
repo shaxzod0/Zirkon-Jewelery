@@ -57,7 +57,7 @@ class CategoryViewModel {
     }
     func getItems() {
         CategoriesRepository.shared.getCategories { res in
-            self.items = res[self.index ?? 0].items
+            self.items = res[self.index].items
         }
     }
     var reloadCollectionView: (()->())?
