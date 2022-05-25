@@ -32,6 +32,9 @@ class CategoryViewModel {
         return categoryName
     }
     func getItems(i: Int) -> Items {
+        if categories.count < index {
+            return Items(description: "" , id: 0, image: "", name: "", price: "")
+        }
         let description = categories[index].items[i].description
         let id = categories[index].items[i].id
         let image = categories[index].items[i].image
