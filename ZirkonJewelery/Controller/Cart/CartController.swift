@@ -131,7 +131,15 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         let now = Date()
         let date = formatter.string(from: now)
         let alert = UIAlertController(title: "Thank ypu", message: "Our operators will contact you soon!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert in
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            
+            guard let name = alert.textFields?[0].text else { return }
+            guard let number = alert.textFields?[1].text else { return }
+            
+            UserDefaultsManager.shared.saveNumber(phone: number)
+            UserDefaultsManager.shared.saveName(name: name)
+
+            
             self.cartViewModel.reloadCollectionView = { [unowned self] in
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
@@ -148,11 +156,9 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         alert.addTextField { textField in
             textField.placeholder = "Phone number"
             textField.text = "+998"
-            UserDefaultsManager.shared.saveNumber(phone: textField.text)
         }
         alert.addTextField { textField in
             textField.placeholder = "Name"
-            UserDefaultsManager.shared.saveName(name: textField.text)
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert, animated: true)
