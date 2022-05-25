@@ -213,6 +213,20 @@ extension OrderStatusController {
         }
     }
     @objc func cancelOrder(){
-        viewModel.clearOrder()
+        alertToConfirm()
+    }
+    
+    func alertToConfirm() {
+        let alert = UIAlertController(title: "Cancel order", message: "Are you sure?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { alert in
+            self.viewModel.clearOrder()
+            self.refreshView()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel))
+        present(alert, animated: true)
+    }
+    func refreshView() -> () {
+        self.viewDidLoad()
+        self.viewWillAppear(true)
     }
 }
