@@ -130,7 +130,7 @@ extension CartController: UICollectionViewDelegate, UICollectionViewDelegateFlow
         formatter.dateFormat = "dd-MM-yyyy"
         let now = Date()
         let date = formatter.string(from: now)
-        let alert = UIAlertController(title: "Thank ypu", message: "Our operators will contact you soon!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Thank you", message: "Our operators will contact you soon!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             
             guard let name = alert.textFields?[0].text else { return }

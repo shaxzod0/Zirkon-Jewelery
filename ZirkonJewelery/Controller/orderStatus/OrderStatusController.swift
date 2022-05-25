@@ -125,11 +125,10 @@ extension OrderStatusController {
         let waitDate = UILabel()
         waitOperatorsView.addSubview(waitDate)
         waitDate.numberOfLines = 0
-        waitDate.text = "Please wait our operators will contact you soon"
+        waitDate.text = "Please wait\nour operators will\ncontact you soon"
         waitDate.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.left.equalTo(waitOperatorsImage.snp.right).inset(-5)
-            make.right.equalToSuperview().inset(20)
         }
         
         let onTheWayView = UIView()

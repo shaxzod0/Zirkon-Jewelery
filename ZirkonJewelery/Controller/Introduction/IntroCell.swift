@@ -13,7 +13,7 @@ class IntroCell: BaseCollectionCell<IntroModel> {
     override func initViews() {
         self.addSubview(introImage)
         introImage.image = UIImage(named: "first")
-        introImage.contentMode = .scaleAspectFit
+        introImage.contentMode = .scaleToFill
         introImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
