@@ -12,11 +12,11 @@ class OrderStatusController: BaseViewController {
     let viewModel = OrderStatusViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        if viewModel.isProductsEmpty() {
-            notOrderedView()
-        }else {
-            initViews()
-        }
+//        if viewModel.isProductsEmpty() {
+//            notOrderedView()
+//        }else {
+//            initViews()
+//        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -69,12 +69,16 @@ extension OrderStatusController {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(contentView)
-        contentView.bounds = scrollView.frame
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(orderNumber.snp.bottom).offset(20)
-            make.left.right.equalToSuperview()
+            make.width.centerX.equalToSuperview()
             make.bottom.equalTo(cancelOrderButton.snp.top).offset(-20)
         }
+        
+        contentView.snp.makeConstraints { make in
+            make.top.centerX.width.bottom.equalToSuperview()
+        }
+        
         let orderAcceptedView = UIView()
         contentView.addSubview(orderAcceptedView)
         orderAcceptedView.snp.makeConstraints { make in
@@ -199,6 +203,7 @@ extension OrderStatusController {
             make.centerX.equalToSuperview()
             make.height.equalTo(70)
             make.top.equalTo(recieveProductView.snp.bottom).offset(30)
+            make.bottom.equalToSuperview()
         }
         let userName = UILabel()
         userInfoView.addSubview(userName)
@@ -217,6 +222,8 @@ extension OrderStatusController {
         DispatchQueue.main.async {
             self.isLoading = false
         }
+        
+        print(scrollView.subviews.count)
     }
     @objc func cancelOrder(){
         alertToConfirm()
